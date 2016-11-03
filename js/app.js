@@ -5,8 +5,7 @@
 
     document.onkeydown = function(event) {
 
-        keyCode = window.event.keyCode;
-        keyCode = event.keyCode;
+        var keyCode = window.event.keyCode || event.keyCode || event.charCode;
 
         switch(keyCode) {
 

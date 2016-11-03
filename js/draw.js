@@ -1,23 +1,23 @@
 var drawModule = (function () {
 
     var bodySnake = function(x, y) {
-        ctx.fillStyle = 'white';
+        ctx.fillStyle = 'green';
         ctx.fillRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
-        ctx.strokeStyle = 'red';
+        ctx.strokeStyle = 'black';
         ctx.strokeRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
     };
 
     var pizza = function(x, y) {
         ctx.fillStyle = 'blue';
         ctx.fillRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
-        ctx.fillStyle = 'skyblue';
+        ctx.fillStyle = 'yellow';
         ctx.fillRect(x*snakeSize+1, y*snakeSize+1, snakeSize-2, snakeSize-2);
     };
 
     var scoreText = function() {
         var score_text = "Score: " + score;
         ctx.fillStyle = 'blue';
-        ctx.fillText(score_text, 250, h-5);
+        ctx.fillText(score_text, h-(h/2)-(h/40), h-5);
     };
 
 
@@ -30,7 +30,7 @@ var drawModule = (function () {
     };
 
     var paint = function(){
-        ctx.fillStyle = 'black';
+        ctx.fillStyle = 'skyblue';
         ctx.fillRect(0, 0, w, h);
         ctx.strokeStyle = 'black';
         ctx.strokeRect(0, 0, w, h);
