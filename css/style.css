@@ -1,5 +1,5 @@
 body {
-    position: absolute;
+    position: absolute;         /* Denna kod ser till att allt placeras i mitten av skärmen */
     top: 5%;
     left: 28%;
 }
@@ -18,7 +18,7 @@ body {
 
 }
 
-button {
+button {                                /* Koden för knappens utseende */
     background-color: green;
     color: white;
     border: none;

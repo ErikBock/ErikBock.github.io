@@ -5,9 +5,25 @@
 
     document.onkeydown = function(event) {
 
-        var keyCode = window.event.keyCode || event.keyCode || event.charCode;
+        var keyCode;
 
-        switch(keyCode) {
+        if (window.event) {
+            keyCode = window.event.keyCode;
+        }
+        else if (event.keyCode) {
+            keyCode = event.keyCode;
+        }
+        else {
+            keyCode = event.which;
+        }
+        keys(keyCode);
+
+    };
+
+    function keys(key)
+    {
+
+        switch(key) {
 
             case 37:
                 if (direction != 'right') {

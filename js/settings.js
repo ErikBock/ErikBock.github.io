@@ -1,8 +1,5 @@
-/**
- * Created by Erik Bock on 2016-10-19.
- */
 
-var mycanvas = document.getElementById('mycanvas');
+var mycanvas = document.getElementById('mycanvas');     /* Hämtar mitt canvas för att kunna använda det i js */
 var ctx = mycanvas.getContext('2d');
 var snakeSize = 10;
 var w = 550;
