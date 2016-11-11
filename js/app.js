@@ -3,12 +3,12 @@
     var btn = document.getElementById('btn');
     btn.addEventListener("click", function(){ drawModule.init();});
 
-    document.onkeydown = function(event) {
+    document.onkeydown = function(event) {                  // Kollar efter användarens knapptryck
 
         var keyCode;
 
-        if (window.event) {
-            keyCode = window.event.keyCode;
+        if (window.event) {                                 //De olika webbläsarna har olika system för knapptryck
+            keyCode = window.event.keyCode;                 // Detta var ett försök att fixa det för firefox, men det funkade ej
         }
         else if (event.keyCode) {
             keyCode = event.keyCode;
@@ -20,7 +20,7 @@
 
     };
 
-    function keys(key)
+    function keys(key)              //Funktion som bestämmer ormens riktning och använder användarens input som variabel
     {
 
         switch(key) {
