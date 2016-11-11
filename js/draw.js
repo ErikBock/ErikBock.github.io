@@ -72,7 +72,9 @@ var drawModule = (function () {
         }
 
         snake.unshift(tail); //Lägger till den nya svansen längst fram i arrayen
-        btnpress = true;                     //Detta gäller både om man ätit och inte, skillnaden är att endast då man äter så försvinner ej den sista delen
+                    //Detta gäller både om man ätit och inte, skillnaden är att endast då man äter så försvinner ej den sista delen
+
+        btnpress = true;
 
         for(var i = 0; i < snake.length; i++) {         //Sätter ut lika många bodySnake (Från funktionen) som värdet på length
             bodySnake(snake[i].x, snake[i].y);
