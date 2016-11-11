@@ -22,36 +22,43 @@
 
     function keys(key)              //Funktion som bestämmer ormens riktning och använder användarens input som variabel
     {
+        if (btnpress == true) {
 
-        switch(key) {
+            switch (key) {
 
-            case 37:
-                if (direction != 'right') {
-                    direction = 'left';
-                }
-                console.log('left');
-                break;
+                case 37:
+                    if (direction != 'right') {
+                        direction = 'left';
+                        console.log('left');
+                        btnpress = false;
+                    }
 
-            case 39:
-                if (direction != 'left') {
-                    direction = 'right';
-                    console.log('right');
-                }
-                break;
+                    break;
 
-            case 38:
-                if (direction != 'down') {
-                    direction = 'up';
-                    console.log('up');
-                }
-                break;
+                case 39:
+                    if (direction != 'left') {
+                        direction = 'right';
+                        console.log('right');
+                        btnpress = false;
+                    }
+                    break;
 
-            case 40:
-                if (direction != 'up') {
-                    direction = 'down';
-                    console.log('down');
-                }
-                break;
+                case 38:
+                    if (direction != 'down') {
+                        direction = 'up';
+                        console.log('up');
+                        btnpress = false;
+                    }
+                    break;
+
+                case 40:
+                    if (direction != 'up') {
+                        direction = 'down';
+                        console.log('down');
+                        btnpress = false;
+                    }
+                    break;
+            }
         }
     }
 

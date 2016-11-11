@@ -7,7 +7,7 @@ var drawModule = (function () {
         ctx.strokeRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
     };
 
-    var pizza = function(x, y) {                                    //Samma som föregående funktion, fast denna gången för maten (pizza)
+    var pizza = function(x, y) {                                //Samma som föregående funktion, fast denna gången för maten (pizza)
         ctx.fillStyle = 'blue';
         ctx.fillRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
         ctx.fillStyle = 'yellow';
@@ -72,7 +72,7 @@ var drawModule = (function () {
         }
 
         snake.unshift(tail); //Lägger till den nya svansen längst fram i arrayen
-                             //Detta gäller både om man ätit och inte, skillnaden är att endast då man äter så försvinner ej den sista delen
+        btnpress = true;                     //Detta gäller både om man ätit och inte, skillnaden är att endast då man äter så försvinner ej den sista delen
 
         for(var i = 0; i < snake.length; i++) {         //Sätter ut lika många bodySnake (Från funktionen) som värdet på length
             bodySnake(snake[i].x, snake[i].y);

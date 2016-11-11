@@ -7,3 +7,4 @@ var h = 550;
 var score = 0;                                          /* skapar lite variabler som ska användas senare */
 var snake;
 var food;
+var btnpress;
