@@ -17,9 +17,29 @@ var drawModule = (function () {
     var scoreText = function() {                            // Funktion som beräknar och skriver ut spelarens poäng
         var score_text = "Score: " + score;
         ctx.fillStyle = 'blue';
-        ctx.fillText(score_text, h-(h/2)-(h/40), h-5);
+        ctx.font = "30px serif";
+        ctx.fillText(score_text, h-(h/2)-(h/15), h-5);
+
     };
 
+    var highScoreText = function() {                            // Funktion som beräknar och skriver ut spelarens poäng
+
+        if (score>highScore) {
+            highScore = score;
+            var highscore_text = " Highscore: " + highScore;
+            ctx.fillStyle = 'blue';
+            ctx.font = "20px serif";
+            ctx.fillText(highscore_text, h - (h / 4), 25);
+        }
+        else
+        {
+            highscore_text = " Highscore: " + highScore;
+            ctx.fillStyle = 'blue';
+            ctx.font = "20px serif";
+            ctx.fillText(highscore_text, h - (h / 4), 25);
+        }
+
+    };
 
     var drawSnake = function() {                      // Funktion som bestämmer längden på ormen
         var length = 4;
@@ -82,6 +102,7 @@ var drawModule = (function () {
 
         pizza(food.x, food.y);                          //Tillkallar pizza
         scoreText();                                    //Tillkallar scoretext
+        highScoreText();
     };
 
     var createFood = function() {                   //Funktion som skapar mat
@@ -117,6 +138,7 @@ var drawModule = (function () {
         score= 0;
         drawSnake();
         createFood();
+        highScoreText();
         gameloop = setInterval(paint, 40);                  //gameloop bestämmer hur ofta koden ska köras
                                                             //Detta bestämmer i sin tur vilken hastighet ormen har
     };
