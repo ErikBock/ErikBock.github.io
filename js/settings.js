@@ -8,4 +8,7 @@ var score = 0;                                          // skapar lite variabler
 var snake;
 var food;
 var btnpress;                                           // Denna ska användas för att förhindra flera knapptryck inom en kort tid
-var highScore = 0;
+var highScore = localStorage.getItem("highScoreInStorage");
+if (highScore == null){
+    highScore = 0
+}

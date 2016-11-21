@@ -22,6 +22,19 @@ var drawModule = (function () {
 
     };
 
+    function storageAvailable(type) {
+        try {
+            var storage = window[type],
+                x = '__storage_test__';
+            storage.setItem(x, x);
+            storage.removeItem(x);
+            return true;
+        }
+        catch(e) {
+            return false;
+        }
+    }
+
     var highScoreText = function() {                            // Funktion som beräknar och skriver ut spelarens poäng
 
         if (score>highScore) {
@@ -30,6 +43,14 @@ var drawModule = (function () {
             ctx.fillStyle = 'blue';
             ctx.font = "20px serif";
             ctx.fillText(highscore_text, h - (h / 4), 25);
+
+            if (storageAvailable('localStorage')) {
+            localStorage.setItem("highScoreInStorage", highScore);
+            }
+            else{
+            //Kan inte spara något då webbläsaren inte stödjer LocalStorage
+            }
+
         }
         else
         {
