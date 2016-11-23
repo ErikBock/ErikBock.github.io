@@ -1,6 +1,6 @@
 body {
     position: absolute;         /* Denna kod ser till att allt placeras i mitten av skärmen */
-    top: 5%;
+    top: 2%;
     left: 28%;
     background-color:black;
 }
@@ -52,4 +52,5 @@ p {
 .game {
     margin: 0 auto;
 }
+
 
