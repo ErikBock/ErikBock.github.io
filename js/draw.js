@@ -76,7 +76,9 @@ var drawModule = (function () {
         ctx.strokeStyle = 'black';
         ctx.strokeRect(0, 0, w, h);
 
-        btn.setAttribute('disabled', true);         // Sätter knappen till läget där den går att använda
+        btnEas.setAttribute('disabled', true);         // Sätter knappen till läget där den inte går att använda
+        btnMed.setAttribute('disabled', true);
+        btnHar.setAttribute('disabled', true);
 
         var snakeX = snake[0].x;                    // Ormens startposition
         var snakeY = snake[0].y;
@@ -94,7 +96,9 @@ var drawModule = (function () {
         // Kod som kollar om ormen har krockat med sig själv och isåfall startar den om spelet.
         if (snakeX == -1 || snakeX == w/snakeSize || snakeY == -1 || snakeY == h/snakeSize || checkCollision(snakeX, snakeY, snake)) {
             //restart game
-            btn.removeAttribute('disabled', true);
+            btnEas.removeAttribute('disabled', true);
+            btnMed.removeAttribute('disabled', true);
+            btnHar.removeAttribute('disabled', true);
 
             ctx.clearRect(0,0,w,h);
             gameloop = clearInterval(gameloop);
@@ -154,13 +158,14 @@ var drawModule = (function () {
         return false;
     };
 
-    var init = function(){                                  //Startvärdena då koden körs första gången
+    var init = function(x, object){                                  //Startvärdena då koden körs första gången
         direction = 'down';
+        var interval2 = x;
         score= 0;
         drawSnake();
         createFood();
         highScoreText();
-        gameloop = setInterval(paint, 40);                  //gameloop bestämmer hur ofta koden ska köras
+        gameloop = setInterval(paint, interval2);                  //gameloop bestämmer hur ofta koden ska köras
                                                             //Detta bestämmer i sin tur vilken hastighet ormen har
     };
 

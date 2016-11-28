@@ -1,7 +1,12 @@
 (function (window, document, drawModule, undefined) {
 
-    var btn = document.getElementById('btn');
-    btn.addEventListener("click", function(){ drawModule.init();});
+    var btn1 = document.getElementById('btnEas');
+    var btn2 = document.getElementById('btnMed');
+    var btn3 = document.getElementById('btnHar');
+
+    btn1.addEventListener("click", function(){ drawModule.init(65, this);});
+    btn2.addEventListener("click", function(){ drawModule.init(50, this);});
+    btn3.addEventListener("click", function(){ drawModule.init(35, this);});
 
     document.onkeydown = function(event) {                  // Kollar efter användarens knapptryck
 

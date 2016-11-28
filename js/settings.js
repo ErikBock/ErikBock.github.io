@@ -9,7 +9,7 @@ var snake;
 var food;
 var btnpress;                                           // Denna ska användas för att förhindra flera knapptryck inom en kort tid
 
-var highScore = localStorage.getItem("highScoreInStorage");
-if (highScore == null){
+var highScore = localStorage.getItem("highScoreInStorage");         // Hämtar Highscore om det finns lagrat på datorn sedan tidigare
+if (highScore == null){                                         //Ser till att HS = 0 om det inte finns något värde
     highScore = 0
 }
