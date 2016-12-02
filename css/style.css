@@ -9,8 +9,8 @@ body {
     text-align:center;
 }
 
-#home {
-    width: 550px;
+#home {                         /* Denna kod är för att skapa en ram och ett startskärm på samma plats som mitt canvas */
+    width: 550px;               /* Detta målas sedan över när spelet väl börjar */
     height: 550px;
     background-image: url("../IMG/snake1.png");
     background-color:gray;

@@ -1,11 +1,11 @@
 (function (window, document, drawModule, undefined) {
 
-    var btn1 = document.getElementById('btnEas');
+    var btn1 = document.getElementById('btnEas');       //Skapar variabler för alla tre svårighetsgraderna
     var btn2 = document.getElementById('btnMed');
     var btn3 = document.getElementById('btnHar');
 
-    btn1.addEventListener("click", function(){ drawModule.init(65, this);});
-    btn2.addEventListener("click", function(){ drawModule.init(50, this);});
+    btn1.addEventListener("click", function(){ drawModule.init(65, this);});    //Skickar ett värde till variabeln interval beroende
+    btn2.addEventListener("click", function(){ drawModule.init(50, this);});    // på vilken svårighetsgrad man väljer
     btn3.addEventListener("click", function(){ drawModule.init(35, this);});
 
     document.onkeydown = function(event) {                  // Kollar efter användarens knapptryck

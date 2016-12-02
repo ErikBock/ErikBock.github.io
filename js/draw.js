@@ -22,7 +22,7 @@ var drawModule = (function () {
 
     };
 
-    function storageAvailable(type) {
+    function storageAvailable(type) {                           //Funktion som kollar om man kan lagra data på användarens dator
         try {
             var storage = window[type],
                 x = '__storage_test__';
@@ -35,16 +35,16 @@ var drawModule = (function () {
         }
     }
 
-    var highScoreText = function() {                            // Funktion som beräknar och skriver ut spelarens poäng
+    var highScoreText = function() {                            // Funktion som tar hand om Highscore
 
-        if (score>highScore) {
+        if (score>highScore) {                  //Om spelarens poäng är högre än highscore, så ersätter dina poäng det gamla highscoret
             highScore = score;
             var highscore_text = " Highscore: " + highScore;
             ctx.fillStyle = 'blue';
             ctx.font = "20px serif";
             ctx.fillText(highscore_text, h - (h / 4), 25);
 
-            if (storageAvailable('localStorage')) {
+            if (storageAvailable('localStorage')) {                     //Sparar sedan poängen på datorn om det är möjligt
             localStorage.setItem("highScoreInStorage", highScore);
             }
             else{
@@ -52,7 +52,7 @@ var drawModule = (function () {
             }
 
         }
-        else
+        else                                        //Om man inte får högre poäng så fortsätter highscore att ha samma värde
         {
             highscore_text = " Highscore: " + highScore;
             ctx.fillStyle = 'blue';
