@@ -22,8 +22,8 @@ var drawModule = (function () {
 
     };
 
-    function storageAvailable(type) {                           //Funktion som kollar om man kan lagra data på användarens dator
-        try {
+/*    function storageAvailable(type) {                           //Funktion som kollar om man kan lagra data på användarens dator
+        try {                                                     //Måste fråga om cookies om den ska få användas
             var storage = window[type],
                 x = '__storage_test__';
             storage.setItem(x, x);
@@ -33,7 +33,7 @@ var drawModule = (function () {
         catch(e) {
             return false;
         }
-    }
+    }*/
 
     var highScoreText = function() {                            // Funktion som tar hand om Highscore
 
